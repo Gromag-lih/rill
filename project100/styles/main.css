@@ -1,0 +1,351 @@
+:root{
+    --OS: "Open Sans", sans-serif;
+    --NS: "Nunito Sans", sans-serif;
+    --light: #fff;
+    --orange: orange;
+    --accent-light: #FBB731;
+    --accent-dark: #F37335;
+    --WL: 255, 255, 255;
+    --DRGBA: 68, 55, 55;
+    --dark: black;
+}
+body{
+    font-family: var(--NS);
+}
+.conteiner{
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    gap: 196px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+.logo{
+    background-image: url(../img/logo.svg);
+    width: 176px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+nav{
+    display: flex;
+    gap: 46px;
+    flex-grow: 1;
+}
+.nav-link{
+    text-decoration: none;
+    color: var(--orange);
+    font-family: var(--OS);
+    font-size: 30px;
+    font-weight: 600;
+}
+.nav-link::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    background-color: transparent;
+}
+.nav-link:hover::after{
+    background-color: var(--accent-light);
+}
+.cart{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    font-family: var(--OS);
+    font-size: 15px;
+    font-weight: 700;
+}
+.cart::before{
+    content: '';
+    display: block;
+    background-image: url(../img/cart.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 26px;
+}
+.hero{
+    background-image: url(../img/three.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 142px;
+    padding-bottom: 142px;
+    text-align: center;
+}
+.breadcrumbs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    gap: 16px;
+    font-family: var(--OS);
+    font-size: 15px;
+    padding-left: 0;
+    color: rgba(var(--WL), .5);
+    margin: 0 0 8px 0;
+}
+.hero-title{
+    font-family: var(--NS);
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--light);
+
+}
+.hero-discription{
+    color: var(--orange);
+    font-family: var(--OS);
+    font-size: 15px;
+    line-height: 160%;
+    max-width: 320px;
+    margin-top: 11px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.breadcrumbs-item{
+    position: relative;
+}
+.breadcrumbs-item:not(:last-child)::after{
+    content: '/';
+    position: absolute;
+    right: -12px;
+}
+.breadcrumbs-link{
+    text-decoration: none;
+    color: rgba(var(--WL), .5);
+}
+.breadcrumbs-link:hover{
+    color: var(--accent-light);
+}
+.banner{
+    margin-top: 140px;
+}
+.banner-wrapper{
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 100px;
+}
+.banner-title{
+    font-family: var(--NS);
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--light);
+}
+.banner-title span{
+    display: block;
+    font-family: var(--OS);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--accent-dark);
+    max-width: 95px;
+    border-radius: 14px;
+    text-align: center;
+    padding: 5px 20px;
+    margin-bottom: 3px;
+}
+.banner-discription{
+    max-width: 350px;
+    color: rgba(var(--WL), .8);
+    font-family: var(--OS);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 160%;
+    font-style: normal;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.banner-btn{
+    font-family: var(--NS);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 20px 10px;
+    background-color: var(--accent-light);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--dark);
+    border: none;
+}
+.banner-btn:hover{
+    background-color: var(--accent-dark);
+}
+/*Каталог*/
+.katalog-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 34px;
+}
+
+.katalog-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 50px 20px;
+}
+.katalog-thumb{
+    width: 100%;
+    height: 430px;
+    position: relative;/*Relative определяет позиционирование элемента относительно его стандартного местоположения на странице. При использовании этого значения можно задать дополнительные параметры, такие как top, bottom, left и right, которые указывают на смещение элемента относительно его стандартного местоположения.*/
+    overflow: hidden; /*Значение overflow по умолчанию – visible , что означает - «показывать контент, когда он выходит за границы блока». Чтобы обрезать контент выходящий за пределы блока, вы можете установить overflow: hidden*/
+    margin-bottom: 20px;
+}
+.katalog-thumb img{
+    width: 100%;
+    height: 100%;
+    position: absolute;/*Absolute задаёт точное местоположение элемента на странице, независимо от других элементов на странице. При использовании значения можно задать параметры top, bottom, left и right, чтобы определить точное местоположение элемента.*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /*CSS-свойство transform позволяет вам поворачивать, масштабировать, наклонять или сдвигать элемент. Оно модифицирует координатное пространство для CSS визуальной форматируемой модели.*/
+    object-fit: cover; /*Свойство object-fit определяет, как содержимое заменяемого элемента, такого как <img> или <video>, должно заполнять контейнер относительно его высоты и ширины.*/
+}
+.katalog-title{
+    color: var(--dark);
+    font-family: var(--NS);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 127%;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.katalog-select{
+    color: var(--dark);
+    font-family: var(--OS);
+    font-size: 15px;
+    appearance: none;
+    flex-basis: 280px;
+    background-image: url(../img/arrow.svg);
+    background-size: 14px 10px;
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    border: 1px solid #dedede;
+    padding: 10px 30px;
+    border-radius: 22px;
+}
+.katalog-item{
+    font-family: var(--NS);
+    text-align: center;
+}
+.katalog-name{
+    color: var(--dark);
+    font-family: 30px;
+    font-weight: 600;
+    line-height: 126%;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.katalog-price{
+    color: rgba(var(--DRGBA), .5);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.katalog-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: var(--NS);
+    font-weight: 700;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1e2f40;
+    background-color: var(--accent-light);
+    border: none;
+    border-radius: 5px;
+}
+.katalog-btn::before{
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../img/buy.svg);
+}
+.footer-box{
+    display: flex;
+    justify-content: space-between;
+}
+.footer{
+    background-color: #575757;
+    padding-top: 110px;
+    padding-bottom: 120px;
+    margin-top: 140px;
+}
+
+.footer-logo{
+    display: block;
+    width: 100px;
+    height: 84px;
+    background-image: url(../img/logo-footer.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer-title{
+    color: var(--light);
+    font-family: var(--NS);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 190%;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+.footer-nav{
+    display: flex;
+    flex-direction: column;/*Выстраивает элементы не по горизонтали, а по вертикали*/
+    gap: 9px;
+}
+.footer-link{
+    color: rgba(var(--WL), .9);
+    font-size: 15px;
+    line-height: 160%;
+    text-decoration: none;
+}
+.foote-list{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.foote-list-item{
+    color: var(--light);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 160%;
+}
+.foote-list-item span{
+    display: block;
+    color: rgba(var(--WL), .9);
+    font-weight: 400;
+}
+.foote-list-item:not(:last-child){
+    margin-bottom: 14px;
+}
+.footer-tel{
+    display: block;
+    color: var(--accent-light);
+    font-family: var(--NS);
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 12px;
+}
